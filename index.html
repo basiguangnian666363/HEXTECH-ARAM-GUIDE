@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071018">
+  <title>海克斯先知 - 海克斯大乱斗攻略</title>
+  <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="海克斯先知首页">
+      <span class="brand-mark">H</span>
+      <span>
+        <strong>海克斯先知</strong>
+        <small>ARAM MAYHEM LAB</small>
+      </span>
+    </a>
+    <div class="patch-pill"><span></span> 已同步 26.12</div>
+    <button class="about-btn" id="aboutBtn">版本说明</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">召唤师，构筑你的胜局</div>
+      <h1>选英雄，<em>看答案。</em></h1>
+      <p>基于英雄定位与技能机制，快速生成海克斯强化优先级、装备路线和对局思路。</p>
+
+      <div class="search-shell" id="searchShell">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+        <input id="heroSearch" type="search" autocomplete="off" placeholder="搜索英雄名称，例如：亚索、Ahri、盖伦">
+        <kbd>Enter</kbd>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <div class="quick-picks">
+        <span>热门：</span>
+        <button data-champion="Yasuo">亚索</button>
+        <button data-champion="Jinx">金克丝</button>
+        <button data-champion="Garen">盖伦</button>
+        <button data-champion="Lux">拉克丝</button>
+        <button data-champion="Vayne">薇恩</button>
+      </div>
+    </section>
+
+    <section class="dashboard" id="dashboard" aria-live="polite">
+      <article class="champion-card">
+        <div class="champion-art-wrap">
+          <img id="championArt" alt="">
+          <div class="art-fade"></div>
+          <span class="role-badge" id="roleBadge">疾风剑客</span>
+        </div>
+        <div class="champion-info">
+          <div class="champion-heading">
+            <div>
+              <span class="label">当前英雄</span>
+              <h2 id="championName">亚索</h2>
+              <p id="championTitle">死亡如风，常伴吾身</p>
+            </div>
+            <div class="power-score">
+              <span id="powerScore">S</span>
+              <small>娱乐强度</small>
+            </div>
+          </div>
+          <div class="playstyle-tags" id="playstyleTags"></div>
+          <div class="core-tip">
+            <span>核心思路</span>
+            <p id="coreTip"></p>
+          </div>
+        </div>
+      </article>
+
+      <div class="recommendations">
+        <div class="build-selector">
+          <div>
+            <span class="selector-label">构筑方案</span>
+            <strong>根据阵容与强化灵活选择</strong>
+          </div>
+          <div class="build-tabs" id="buildTabs" role="tablist" aria-label="推荐构筑方案"></div>
+        </div>
+        <div class="section-head">
+          <div>
+            <span class="section-index">01</span>
+            <h2>海克斯强化</h2>
+          </div>
+          <div class="legend"><i class="prismatic"></i> 棱彩 <i class="gold"></i> 黄金 <i class="silver"></i> 白银</div>
+        </div>
+        <div class="augment-grid" id="augmentGrid"></div>
+
+        <div class="section-head item-head">
+          <div>
+            <span class="section-index">02</span>
+            <h2>装备路线</h2>
+          </div>
+          <span class="adaptive-note">按阵容灵活替换防装</span>
+        </div>
+        <div class="build-path" id="buildPath"></div>
+      </div>
+    </section>
+
+    <section class="feature-strip">
+      <div><strong>170+</strong><span>全英雄覆盖</span></div>
+      <div><strong>26.12</strong><span>当前版本</span></div>
+      <div><strong>3 层</strong><span>推荐优先级</span></div>
+      <div><strong>可解释</strong><span>每项都有理由</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>海克斯先知 · 非 Riot Games 官方产品</span>
+    <span>英雄与装备素材来自 Riot Data Dragon 16.12.1</span>
+  </footer>
+
+  <dialog id="aboutDialog">
+    <button class="dialog-close" id="closeDialog" aria-label="关闭">×</button>
+    <span class="dialog-kicker">PATCH INTELLIGENCE</span>
+    <h2>26.12 版本说明</h2>
+    <p>本版本于 2026 年 6 月更新，海克斯大乱斗移除了“羁绊”系统，并加入技能专属强化与多阶段任务型强化。</p>
+    <ul>
+      <li>推荐为机制与定位驱动的策略评级，不是伪造的实时胜率。</li>
+      <li>英雄和装备基础资料同步 Riot Data Dragon 16.12.1。</li>
+      <li>退役强化不会出现在推荐池中。</li>
+    </ul>
+    <div class="source-box">数据版本：26.12 · 最后核对：2026-06-12</div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>
